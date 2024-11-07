@@ -6,10 +6,14 @@
 </head>
     
 <body>
+    <div id="loginMessage">
+        <h1>パスワードを入力してください</h1>
+    </div>
+
     <div id="content" style="display: none;"> <!-- 初期状態で非表示 -->
         <h1>ThingSpeakの複数フィールドグラフ表示</h1>
         <p>ここにコンテンツが表示されます。</p>
-        
+
         <!-- フィールド1のグラフ -->
         <h2>EC</h2>
         <iframe 
@@ -50,12 +54,12 @@
         if (password === correctPassword) {
             // 正しい場合、コンテンツを表示
             console.log("パスワードが一致しました。コンテンツを表示します。");
+            document.getElementById("loginMessage").style.display = "none"; // ログインメッセージ非表示
             document.getElementById("content").style.display = "block"; // コンテンツを表示
         } else {
-            // 間違っている場合、エラーメッセージを表示し、進行を停止
+            // 間違っている場合、エラーメッセージを表示
             console.log("パスワードが間違っています。");
-            document.body.innerHTML = "パスワードが間違っています。再読み込みして再度入力してください。";
-            return; // スクリプトの実行を停止
+            document.getElementById("loginMessage").innerHTML = "<h1>パスワードが間違っています。再読み込みして再度入力してください。</h1>";
         }
     </script>
 
