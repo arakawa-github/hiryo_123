@@ -5,7 +5,11 @@
     <title>ThingSpeakの複数フィールドグラフ表示</title>
 </head>
     
-<body style="display: none;"> <!-- 初期状態で非表示 -->
+<body>
+    <div id="content" style="display: none;"> <!-- 初期状態で非表示 -->
+        <h1>ThingSpeakの複数フィールドグラフ表示</h1>
+        <p>ここにコンテンツが表示されます。</p>
+    </div>
 
     <script>
         // 正しいパスワードを設定
@@ -13,13 +17,16 @@
 
         // パスワード入力プロンプト
         var password = prompt("パスワードを入力してください:");
+        console.log("入力されたパスワード: " + password);
 
         // パスワードを確認
         if (password === correctPassword) {
             // 正しい場合、コンテンツを表示
+            console.log("パスワードが一致しました。コンテンツを表示します。");
             document.body.style.display = "block";
         } else {
             // 間違っている場合、エラーメッセージを表示
+            console.log("パスワードが間違っています。");
             document.body.innerHTML = "パスワードが間違っています。再読み込みして再度入力してください。";
         }
     </script>
