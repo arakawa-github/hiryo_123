@@ -9,6 +9,33 @@
     <div id="content" style="display: none;"> <!-- 初期状態で非表示 -->
         <h1>ThingSpeakの複数フィールドグラフ表示</h1>
         <p>ここにコンテンツが表示されます。</p>
+        
+        <!-- フィールド1のグラフ -->
+        <h2>EC</h2>
+        <iframe 
+            width="450" 
+            height="260" 
+            style="border: 1px solid #cccccc;" 
+            src="https://thingspeak.com/channels/2731924/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60">
+        </iframe>
+
+        <!-- フィールド2のグラフ -->
+        <h2>PH</h2>
+        <iframe 
+            width="450" 
+            height="260" 
+            style="border: 1px solid #cccccc;" 
+            src="https://thingspeak.com/channels/2731924/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60">
+        </iframe>
+
+        <!-- フィールド3のグラフ -->
+        <h2>液温</h2>
+        <iframe 
+            width="450" 
+            height="260" 
+            style="border: 1px solid #cccccc;" 
+            src="https://thingspeak.com/channels/2731924/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60">
+        </iframe>
     </div>
 
     <script>
@@ -23,43 +50,14 @@
         if (password === correctPassword) {
             // 正しい場合、コンテンツを表示
             console.log("パスワードが一致しました。コンテンツを表示します。");
-            document.body.style.display = "block";
+            document.getElementById("content").style.display = "block"; // コンテンツを表示
         } else {
-            // 間違っている場合、エラーメッセージを表示
+            // 間違っている場合、エラーメッセージを表示し、進行を停止
             console.log("パスワードが間違っています。");
             document.body.innerHTML = "パスワードが間違っています。再読み込みして再度入力してください。";
+            return; // スクリプトの実行を停止
         }
     </script>
-
-    
-    <h1>センサーデータのリアルタイムグラフ（フィールド1, 2, 3）</h1>
-    
-    <!-- フィールド1のグラフ -->
-    <h2>EC</h2>
-    <iframe 
-        width="450" 
-        height="260" 
-        style="border: 1px solid #cccccc;" 
-        src="https://thingspeak.com/channels/2731924/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60">
-    </iframe>
-    
-    <!-- フィールド2のグラフ -->
-    <h2>PH</h2>
-    <iframe 
-        width="450" 
-        height="260" 
-        style="border: 1px solid #cccccc;" 
-        src="https://thingspeak.com/channels/2731924/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60">
-    </iframe>
-    
-    <!-- フィールド3のグラフ -->
-    <h2>液温</h2>
-    <iframe 
-        width="450" 
-        height="260" 
-        style="border: 1px solid #cccccc;" 
-        src="https://thingspeak.com/channels/2731924/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60">
-    </iframe>
 
 </body>
 </html>
